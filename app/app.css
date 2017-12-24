@@ -1,5 +1,15 @@
 /* app css stylesheet */
 
+/* html {
+  direction:rtl;
+  font-family:"Droid Arabic Kufi", "Droid Sans", sans-serif;
+  font-size:14px;
+} */
+
+html {
+  font-family: GillSans, Calibri, Trebuchet, sans-serif;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -22,4 +32,8 @@
 .menu > li + li:before {
   content: "|";
   padding-right: 0.3em;
+}
+
+td, th {
+  text-align: right;
 }

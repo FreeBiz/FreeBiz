@@ -1,1 +1,68 @@
-<p>This is the partial for view 1.</p>
+<div ng-controller="BusinessCtrl">
+
+    <!--<div class="row">-->
+    <!--<div class="col-md-12">-->
+    <ul class="collapsible" data-collapsible="accordion">
+        <li>
+            <div class="collapsible-header active">מי אנחנו?</div>
+            <div class="collapsible-body">
+                <div>
+                    פריביז הוא אתר ללא מטרות רווח שנועד לעזור לכל מי שמעוניין לתמוך בעסקים שבחרו שלא לתת יד
+                    למונופול הרבנות
+                </div>
+                <div>
+                    באתר תוכלו למצוא בתי עסק מכל הסוגים - מסעדות, חנויות, אטרקציות ועוד
+                </div>
+                <div>
+                    התמיכה שלכם בעסקים האלו חשובה ועוזרת להראות שישראל חופשית ושיש בה ציבור שלא רוצה לאפשר
+                    לרבנות להחליט על
+                    אורח החיים שלו
+                </div>
+                <span>
+                אם נתקלתם בעסק חופשי שלא רשום באתר - אתם מוזמנים לשלוח מייל לכתובת
+            </span>
+                <span style="display: inline-block; font-weight: bold">
+                israelfreebiz@gmail.com
+            </span>
+                <span style="display: inline-block">ונדאג להוסיף אותו</span>
+                <div>
+                    אם נתקלתם באתר בעסק שכבר לא פעיל - נשמח לשמוע על כך כדי לשמור על האתר רלוונטי עבורכם
+                </div>
+            </div>
+        </li>
+    </ul>
+    <!--</div>-->
+    <!--</div>-->
+
+
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="search" type="text" class="validate" ng-model="search" placeholder="חפש עסק"/>
+        </div>
+    </div>
+    <div class="row">
+        <table class="striped">
+            <thead>
+            <tr>
+                <th>שם</th>
+                <th>כתובת</th>
+                <th>טלפון</th>
+                <th>סוג</th>
+                <th>אתר</th>
+                <th>הערות</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr ng-repeat="business in businesses | filter: search">
+                <td>{{ business.name }}</td>
+                <td>{{ business.address }}</td>
+                <td>{{ business.phone }}</td>
+                <td>{{ business.type }}</td>
+                <td style="direction: ltr; text-align: left; padding-left: 10px"><a href="http://{{ business.websiteUrl }}">{{ business.websiteUrl }}</a></td>
+                <td>{{ business.comments }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
